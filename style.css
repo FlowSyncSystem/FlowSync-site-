@@ -1,0 +1,106 @@
+:root{
+  --bg:#0b0b0b;
+  --panel:#121212;
+  --ink:#e8e8e6;
+  --muted:#a7a7a2;
+  --accent:#9cffc7; /* soft neon mint */
+  --line:#1e1e1e;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:radial-gradient(1200px 800px at 90% -100px, #1b1b1b 0%, #0b0b0b 50%, #0b0b0b 100%);
+}
+
+/* nav */
+.nav{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:14px 22px; background:rgba(11,11,11,.7); backdrop-filter:saturate(1.2) blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink)}
+.brand-logo{width:36px; height:36px; object-fit:contain; filter:drop-shadow(0 0 0 transparent)}
+.brand-text{font-weight:800; letter-spacing:.2px}
+.nav-links{display:flex; gap:18px; align-items:center}
+.nav a{color:var(--muted); text-decoration:none; font-weight:500}
+.nav a:hover{color:var(--ink)}
+.menu{display:none; background:none; border:0; padding:8px}
+.menu span{display:block; width:22px; height:2px; background:var(--ink); margin:4px 0}
+
+/* buttons */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:14px 18px; border-radius:12px; text-decoration:none; font-weight:700; letter-spacing:.2px}
+.btn-primary{background:var(--ink); color:#0b0b0b}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-outline{border:1px solid var(--line); color:var(--ink)}
+.btn-ghost{background:#171717; border:1px solid var(--line); color:var(--ink)}
+.wide{width:100%}
+
+/* hero */
+.hero{
+  padding:72px 22px 40px; border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(900px 400px at 20% 0%, rgba(156,255,199,.12), transparent 60%),
+    radial-gradient(700px 300px at 90% 10%, rgba(156,255,199,.07), transparent 60%);
+}
+.hero-content{max-width:1100px; margin:0 auto; text-align:center}
+.eyebrow{color:var(--accent); font-weight:800; letter-spacing:.15em}
+.hero h1{font-size:clamp(32px,5vw,58px); margin:.35em 0 .25em; line-height:1.05}
+.accent{color:var(--accent)}
+.sub{color:var(--muted); max-width:760px; margin:0 auto 22px}
+.cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+.trust{display:flex; gap:16px; justify-content:center; margin-top:12px; color:var(--muted)}
+.trust span{background:#121212; border:1px solid var(--line); padding:8px 12px; border-radius:999px}
+
+/* sections */
+.section{padding:64px 22px; border-bottom:1px solid var(--line)}
+.section h2{text-align:center; font-size:clamp(26px,3.5vw,40px); margin:0 0 28px}
+.grid3{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.card{background:var(--panel); border:1px solid var(--line); padding:20px; border-radius:16px}
+.card h3{margin-top:0}
+
+.metric{background:var(--panel); border:1px solid var(--line); padding:22px; border-radius:16px; text-align:center}
+.metric .num{font-weight:800; font-size:32px; color:var(--accent)}
+.metric .label{color:var(--muted)}
+
+.center{text-align:center}
+.note{color:var(--muted); margin-top:16px}
+
+/* pricing */
+.pricing{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.plan{background:var(--panel); border:1px solid var(--line); padding:24px; border-radius:18px}
+.plan-pro{outline:2px solid var(--accent); outline-offset:0}
+.plan-name{color:var(--muted); margin:0 0 8px}
+.price{font-weight:800; font-size:28px; margin:.1em 0 16px}
+.price span{color:var(--muted); font-size:14px}
+.plan ul{padding-left:18px; margin:0 0 18px}
+.plan li{margin:8px 0}
+
+/* faq */
+.faq{max-width:900px; margin:0 auto}
+details{background:var(--panel); border:1px solid var(--line); padding:16px 18px; border-radius:14px; margin:10px 0}
+summary{cursor:pointer; font-weight:600}
+
+/* drawer (mobile) */
+.drawer{display:none; position:fixed; inset:60px 0 0 0; background:#0b0b0b; padding:16px; border-top:1px solid var(--line); z-index:40}
+.drawer a{display:block; padding:12px 0}
+
+/* footer */
+.footer{padding:28px 22px}
+.footer-inner{max-width:1100px; margin:0 auto; display:flex; gap:16px; justify-content:space-between; align-items:center; flex-wrap:wrap}
+.muted{color:var(--muted)}
+.tiny{font-size:12px}
+.tel{text-decoration:none}
+
+/* responsive */
+@media (max-width:900px){
+  .grid3{grid-template-columns:1fr}
+  .pricing{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .menu{display:block}
+}
