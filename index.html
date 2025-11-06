@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FlowSync — Book More Appointments Automatically</title>
+  <meta name="description" content="FlowSync turns missed messages into booked customers. Instant replies, auto-booking, and no-shows reduced. Book a free 30-minute setup call." />
+  <meta name="theme-color" content="#0B0B0B" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="FlowSync — Book More Appointments Automatically" />
+  <meta property="og:description" content="Instant replies • Auto-booking • Fewer no-shows. Book a free 30-minute setup call." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flowsync.yoursite" />
+  <!-- If you later upload your logo as /logo.png Netlify will use it -->
+  <meta property="og:image" content="logo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Calendly (popup widget) -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Top Nav -->
+  <header class="nav">
+    <a href="#" class="brand">
+      <!-- Text logo now; replace src with /logo.png after you upload your logo file -->
+      <img src="logo.png" alt="FlowSync logo" class="brand-logo" onerror="this.style.display='none'">
+      <span class="brand-text">FlowSync</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#results">Results</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#" class="btn btn-outline" id="bookNowTop">Book now</a>
+    </nav>
+    <button class="menu" id="menuBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="drawer" id="drawer">
+    <a href="#how">How it works</a>
+    <a href="#results">Results</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#" class="btn btn-outline" id="bookNowTopMobile">Book now</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">APPOINTMENTS ON AUTOPILOT</p>
+      <h1>Turn missed messages into <span class="accent">booked customers</span>.</h1>
+      <p class="sub">
+        Instant SMS replies. Auto-booking with Calendly. No-shows cut. 
+        Get 20–40% more bookings in 7 days.
+      </p>
+
+      <div class="cta">
+        <a href="#" class="btn btn-primary" id="bookNowHero">Book free 30-min setup</a>
+        <a href="tel:+447939899074" class="btn btn-ghost">Call 07939&nbsp;899074</a>
+      </div>
+
+      <div class="trust">
+        <span>⚡ Instant reply</span>
+        <span>📅 Auto-booking</span>
+        <span>✅ Fewer no-shows</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how">
+    <h2>How FlowSync works</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>1) Capture</h3>
+        <p>We connect your inbox and phone so every missed message is captured automatically.</p>
+      </div>
+      <div class="card">
+        <h3>2) Reply</h3>
+        <p>Prospects get instant, friendly replies by SMS with your availability.</p>
+      </div>
+      <div class="card">
+        <h3>3) Book</h3>
+        <p>They pick a time in Calendly. You get a confirmed booking with reminders built-in.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results / Proof -->
+  <section class="section" id="results">
+    <h2>What you can expect</h2>
+    <div class="grid3">
+      <div class="metric">
+        <div class="num">+20–40%</div>
+        <div class="label">more bookings</div>
+      </div>
+      <div class="metric">
+        <div class="num">60 sec</div>
+        <div class="label">average reply time</div>
+      </div>
+      <div class="metric">
+        <div class="num">−35%</div>
+        <div class="label">no-shows</div>
+      </div>
+    </div>
+    <p class="center note">Your system, your brand — FlowSync runs quietly in the background.</p>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="pricing">
+    <h2>Simple pricing</h2>
+    <div class="pricing">
+      <div class="plan">
+        <p class="plan-name">Launch</p>
+        <p class="price">£0 <span>/ setup call</span></p>
+        <ul>
+          <li>Audit & setup roadmap</li>
+          <li>Calendly booking flow</li>
+          <li>Twilio cost estimate</li>
+        </ul>
+        <a href="#" class="btn btn-primary wide" id="bookNowPrice">Book free call</a>
+      </div>
+      <div class="plan plan-pro">
+        <p class="plan-name">Scale</p>
+        <p class="price">From £ /mo</p>
+        <ul>
+          <li>Instant SMS replies</li>
+          <li>Auto-booking + reminders</li>
+          <li>No-show reduction</li>
+          <li>Reporting dashboard</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#" class="btn btn-outline wide" id="bookNowPrice2">Talk to us</a>
+      </div>
+    </div>
+    <p class="center tiny">Twilio usage billed at cost (numbers + SMS). We help you keep it lean.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <h2>FAQ</h2>
+    <div class="faq">
+      <details>
+        <summary>Do I need a new phone number?</summary>
+        <p>We recommend a dedicated number for automations, but you can forward from your current line.</p>
+      </details>
+      <details>
+        <summary>Will this work with my booking calendar?</summary>
+        <p>Yes. We integrate your Calendly link and send instant booking prompts via SMS.</p>
+      </details>
+      <details>
+        <summary>Is it compliant?</summary>
+        <p>We follow local messaging rules and set up your Twilio profile + regulatory bundle where required.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="foot-brand">
+        <span class="brand-text">FlowSync</span>
+        <p class="muted">We turn missed messages into booked customers.</p>
+      </div>
+      <div class="foot-cta">
+        <a href="#" class="btn btn-primary" id="bookNowFoot">Book free 30-min setup</a>
+        <a href="tel:+447939899074" class="muted tel">Call 07939&nbsp;899074</a>
+      </div>
+    </div>
+    <p class="tiny center muted">© <span id="year"></span> FlowSync. All rights reserved.</p>
+  </footer>
+
+  <!-- Calendly trigger -->
+  <script>
+    const calendlyUrl = "https://calendly.com/flowsyncsystem/30min?month=2025-11";
+    function openCalendly(e){ e && e.preventDefault(); Calendly.initPopupWidget({ url: calendlyUrl }); return false; }
+  </script>
+  <script src="script.js"></script>
+
+  <!-- LocalBusiness schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "FlowSync",
+    "telephone": "+44 7939 899074",
+    "url": "https://flowsync.yoursite",
+    "image": "https://flowsync.yoursite/logo.png",
+    "description": "FlowSync turns missed messages into booked customers with instant SMS replies and Calendly auto-booking.",
+    "areaServed": "GB",
+    "sameAs": []
+  }
+  </script>
+</body>
+</html>
