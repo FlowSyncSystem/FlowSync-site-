@@ -1,24 +1,36 @@
 // Year in footer
 document.getElementById('y').textContent = new Date().getFullYear();
 
-// Hamburger / mobile menu
-const burger = document.getElementById('hamburger');
-const mobile = document.getElementById('mobileMenu');
+// Hamburger → fullscreen overlay
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
 
-burger.addEventListener('click', () => {
-  const open = mobile.style.display === 'flex';
-  mobile.style.display = open ? 'none' : 'flex';
-  burger.setAttribute('aria-expanded', String(!open));
+const toggleMenu = () => {
+  const open = menu.classList.toggle('show');
+  document.body.classList.toggle('menu-open', open);
+  hamburger.setAttribute('aria-expanded', String(open));
+};
+hamburger.addEventListener('click', toggleMenu);
+
+// Close menu on overlay click
+menu.addEventListener('click', (e) => {
+  if (e.target === menu) toggleMenu();
 });
 
-// Close mobile menu after clicking a link + smooth scroll (native CSS handles scroll)
-mobile.querySelectorAll('a').forEach(a=>{
-  a.addEventListener('click', ()=>{ mobile.style.display='none'; burger.setAttribute('aria-expanded','false'); });
-});
+// Smooth scroll + close menu on link click
+document.querySelectorAll('.menu-link, a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const href = a.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+    const el = document.querySelector(href);
+    if (!el) return;
 
-// Optional: tiny parallax on gradient button for “motion” feel
-const wobbleTargets = document.querySelectorAll('.btn--primary.anim-gradient, .gradient.anim-gradient');
-window.addEventListener('scroll', () => {
-  const amt = Math.min(1, window.scrollY / 600);
-  wobbleTargets.forEach(el => el.style.filter = `saturate(${1+amt*0.2})`);
+    e.preventDefault();
+    // Close overlay if open
+    if (menu.classList.contains('show')) toggleMenu();
+
+    // Smooth, controlled scroll (works in all browsers)
+    const top = el.getBoundingClientRect().top + window.pageYOffset - 10;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
 });
