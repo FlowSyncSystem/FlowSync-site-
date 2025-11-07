@@ -1,36 +1,32 @@
 // Year in footer
 document.getElementById('y').textContent = new Date().getFullYear();
 
-// Hamburger → fullscreen overlay
-const hamburger = document.getElementById('hamburger');
-const menu = document.getElementById('menu');
+// Mobile menu
+const burger = document.getElementById('hamburger');
+const mnav = document.getElementById('mobileNav');
 
-const toggleMenu = () => {
-  const open = menu.classList.toggle('show');
-  document.body.classList.toggle('menu-open', open);
-  hamburger.setAttribute('aria-expanded', String(open));
-};
-hamburger.addEventListener('click', toggleMenu);
-
-// Close menu on overlay click
-menu.addEventListener('click', (e) => {
-  if (e.target === menu) toggleMenu();
+function toggleMenu() {
+  const open = mnav.classList.toggle('open');
+  document.body.style.overflow = open ? 'hidden' : '';
+  burger.setAttribute('aria-expanded', String(open));
+  mnav.setAttribute('aria-hidden', String(!open));
+}
+burger.addEventListener('click', toggleMenu);
+mnav.addEventListener('click', (e)=> {
+  if (e.target.classList.contains('m-link')) toggleMenu();
 });
 
-// Smooth scroll + close menu on link click
-document.querySelectorAll('.menu-link, a[href^="#"]').forEach(a => {
+// Smooth-scroll with small offset so headers aren’t hidden
+const OFFSET = 72;
+document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
-    const href = a.getAttribute('href');
-    if (!href || !href.startsWith('#')) return;
-    const el = document.querySelector(href);
-    if (!el) return;
-
-    e.preventDefault();
-    // Close overlay if open
-    if (menu.classList.contains('show')) toggleMenu();
-
-    // Smooth, controlled scroll (works in all browsers)
-    const top = el.getBoundingClientRect().top + window.pageYOffset - 10;
-    window.scrollTo({ top, behavior: 'smooth' });
+    const id = a.getAttribute('href');
+    if (id.length > 1) {
+      e.preventDefault();
+      const el = document.querySelector(id);
+      if (!el) return;
+      const y = el.getBoundingClientRect().top + window.scrollY - OFFSET;
+      window.scrollTo({top: y, behavior: 'smooth'});
+    }
   });
 });
