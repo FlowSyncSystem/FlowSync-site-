@@ -509,3 +509,7 @@ h1, h2, h3 {
   animation-play-state: paused;
   transform: translateY(0) !important;
 }
+/* Add spacing above section headings */
+section h2 {
+  margin-top: 60px;   /* adjust this number to increase/decrease spacing */
+}
