@@ -376,3 +376,7 @@ h1, h2, h3 {
   transition: transform .25s ease, opacity .25s ease;
 }
 .burger span + span { margin-top: 5px; }
+/* make the glyphs actually visible */
+.social { color: #fff; }                /* icon color */
+.social svg { width: 22px; height: 22px; display: block; }
+.social svg path { fill: currentColor; }/* ensure paths use the color */
