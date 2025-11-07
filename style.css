@@ -594,3 +594,32 @@ section h2 {
 
 /* Make sure the drawer sits above the overlay */
 #nav-drawer{ z-index: 90; position: fixed; right: 16px; left: 16px; }
+/* Overlay covers the whole screen and is tappable */
+#nav-overlay{
+  position: fixed;
+  inset: 0;                       /* top/right/bottom/left: 0 */
+  background: rgba(9,12,16,.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;           /* disabled until open */
+  transition: opacity .18s ease;
+  z-index: 90;
+}
+
+/* The sheet itself (no huge top gap anymore) */
+#nav-drawer{
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top) + 12px);  /* small, consistent offset */
+  left: 12px;
+  right: 12px;
+  margin: 0 auto;
+  max-width: 560px;
+  z-index: 100;
+}
+
+/* When open */
+.nav-open #nav-overlay{
+  opacity: 1;
+  pointer-events: auto;           /* now you can tap it to close */
+}
