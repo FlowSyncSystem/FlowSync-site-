@@ -1,145 +1,130 @@
-<!doctype html>
-<html lang="en" id="top">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FlowSync</title>
-  <link rel="preload" href="logo.png" as="image">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlowSync</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
+<!-- ✅ Header -->
+<header class="site-header">
     <a href="#top" class="brand">
-      <img src="logo.png" alt="FlowSync logo" class="brand-logo" />
-      <span class="brand-name">FlowSync</span>
+        <img src="logo.png" class="brand-logo" alt="FlowSync logo" />
+        <span class="brand-name">FlowSync</span>
     </a>
 
-    <!-- Burger -->
-    <button id="nav-toggle" class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
-      <span></span><span></span><span></span>
+    <!-- ✅ New working 3-line menu -->
+    <button id="nav-toggle" class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
     </button>
-  </header>
+</header>
 
-  <!-- Overlay + Drawer (tap overlay to close) -->
-  <div id="nav-overlay" aria-hidden="true"></div>
-  <nav id="nav-drawer" class="nav-drawer" aria-hidden="true">
+<!-- ✅ Blur overlay -->
+<div id="nav-overlay"></div>
+
+<!-- ✅ Slide-down menu -->
+<nav id="nav-drawer">
     <a class="nav-item" href="#how">How it works</a>
     <a class="nav-item" href="#pricing">Pricing</a>
     <a class="nav-item" href="#book">Book</a>
-  </nav>
+</nav>
 
-  <!-- Hero -->
-  <main>
-    <section class="hero" id="home">
-      <p class="pill">No ads. No code. Live in days.</p>
+<!-- ✅ Hero -->
+<section class="hero" id="top">
+    <div class="badge">No ads. No code. Live in days.</div>
 
-      <h1 class="hero-title">
-        Turn missed<br />
-        messages into<br />
-        <span class="gradient-move">booked customers.</span>
-      </h1>
+    <h1>Turn missed<br>messages into<br><span class="gradient-text">booked customers.</span></h1>
 
-      <p class="hero-sub">
+    <p class="subtext">
         Instant reply, auto-booking, and no-show reduction — so every enquiry becomes an appointment.
-      </p>
+    </p>
 
-      <div class="hero-ctas">
-        <a href="#book" class="btn btn-gradient">Book a free setup</a>
-        <a href="#pricing" class="btn btn-dark">See pricing</a>
-      </div>
+    <div class="hero-buttons">
+        <a href="#book" class="btn-primary">Book a free setup</a>
+        <a href="#pricing" class="btn-secondary">See pricing</a>
+    </div>
 
-      <ul class="features">
-        <li><span class="dot"></span>Instant reply on Instagram, WhatsApp &amp; SMS.</li>
+    <ul class="features">
+        <li><span class="dot"></span>Instant reply on Instagram, WhatsApp & SMS.</li>
         <li><span class="dot"></span>Auto-booking straight into your calendar.</li>
         <li><span class="dot"></span>No-shows cut by smart reminders.</li>
-      </ul>
+    </ul>
 
-      <div class="socials">
-        <a class="social" href="https://instagram.com/" target="_blank" rel="noopener">
-          <!-- Instagram SVG -->
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.2a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/>
-          </svg>
-        </a>
-        <a class="social" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
-          <!-- TikTok official mark (single-color) -->
-          <svg viewBox="0 0 48 48" aria-hidden="true">
-            <path d="M31.6 4v7.6c2.6 2.1 5.8 3.4 9.4 3.4v6.6c-3.7 0-7.1-1.1-9.9-3v13.1c0 7.2-5.8 13-13 13S5.4 38.9 5.4 31.7c0-7.1 5.7-12.9 12.8-13h.2v6.7h-.2c-3.4.1-6.2 2.9-6.2 6.3 0 3.5 2.9 6.4 6.4 6.4s6.3-2.9 6.3-6.4V4h6.7z"/>
-          </svg>
-        </a>
-      </div>
-    </section>
+    <div class="socials">
+        <a href="https://instagram.com" class="social-icon ig"></a>
+        <a href="https://tiktok.com" class="social-icon tk"></a>
+    </div>
+</section>
 
-    <!-- How it works -->
-    <section id="how" class="section">
-      <h2>How it works</h2>
-      <div class="card">
-        <h3>1) Connect your inboxes</h3>
-        <p>We connect Instagram DMs, WhatsApp and SMS.</p>
-      </div>
-      <div class="card">
-        <h3>2) Auto-reply &amp; qualify</h3>
-        <p>Replies go out instantly and gather details so you don’t have to.</p>
-      </div>
-      <div class="card">
-        <h3>3) Book &amp; remind</h3>
-        <p>Smart confirmations &amp; reminders keep revenue on the calendar.</p>
-      </div>
-    </section>
+<!-- ✅ How it works -->
+<section id="how" class="section">
+    <h2>How it works</h2>
+    <div class="card">1) Connect your inboxes<br>We connect Instagram DMs, WhatsApp and SMS.</div>
+    <div class="card">2) Auto-reply & qualify<br>Your enquiries get fast replies automatically.</div>
+    <div class="card">3) Auto-booking<br>Qualified leads get booked straight into your calendar.</div>
+</section>
 
-    <!-- Pricing -->
-    <section id="pricing" class="section">
-      <h2>Pricing</h2>
-      <p class="muted">Simple. No setup fee. Cancel anytime.</p>
+<!-- ✅ Pricing -->
+<section id="pricing" class="section pricing-section">
 
-      <div class="price-grid">
-        <!-- Monthly -->
-        <article class="price-card glow">
-          <span class="badge">Most popular</span>
-          <h3 class="plan">Monthly</h3>
-          <div class="money"><span class="big">£269.99</span><span class="per">/month</span></div>
-          <ul class="price-feats">
-            <li><span class="dot"></span>Instant reply &amp; auto-booking</li>
+    <!-- ✅ Monthly -->
+    <div class="pricing-card">
+        <div class="tag">Most popular</div>
+
+        <h3>Monthly</h3>
+        <p class="price">£269.99 <span>/month</span></p>
+
+        <ul class="price-features">
+            <li><span class="dot"></span>Instant reply & auto-booking</li>
             <li><span class="dot"></span>WhatsApp / SMS / DMs</li>
             <li><span class="dot"></span>No-show reduction</li>
             <li><span class="dot"></span>Support included</li>
-          </ul>
-          <a class="btn btn-gradient wide"
-             href="https://buy.stripe.com/aFafZh742bXKd3l3oWeZ201" target="_blank" rel="noopener">
-            Subscribe Monthly
-          </a>
-        </article>
+        </ul>
 
-        <!-- One-time -->
-        <article class="price-card">
-          <h3 class="plan">One-time</h3>
-          <div class="money"><span class="big">£400</span></div>
-          <ul class="price-feats">
+        <a href="https://buy.stripe.com/5kQ8wPfAy4vi0gz6B8eZ200" class="btn-subscribe">Subscribe Monthly</a>
+    </div>
+
+    <!-- ✅ One-time -->
+    <div class="pricing-card">
+        <h3>One-time</h3>
+        <p class="price">£400</p>
+
+        <ul class="price-features">
             <li><span class="dot"></span>Pay once, get a year of FlowSync</li>
             <li><span class="dot"></span>Same features as monthly</li>
-          </ul>
-          <a class="btn btn-dark wide"
-             href="https://buy.stripe.com/5kQ8wPfAy4vi0gz6B8eZ200" target="_blank" rel="noopener">
+        </ul>
+
+        <a href="https://buy.stripe.com/aFafZh742bXKd3l3oWeZ201" class="btn-subscribe">
             Pay £400 one-time
-          </a>
-        </article>
-      </div>
-    </section>
+        </a>
+    </div>
 
-    <!-- Book -->
-    <section id="book" class="section">
-      <h2>Book your free setup call</h2>
-      <p class="muted">Pick a time — we’ll connect FlowSync, import your message templates and go live.</p>
-      <!-- You can drop your embed here -->
-    </section>
-  </main>
+</section>
 
-  <footer class="footer">
-    © 2025 FlowSync. All rights reserved.
-  </footer>
+<!-- ✅ Calendly Booking -->
+<section id="book" class="section">
+    <h2>Book your free setup call</h2>
+    <p>Pick a time — we’ll connect FlowSync, import your message templates and go live.</p>
 
-  <script src="script.js"></script>
+    <iframe
+        src="https://calendly.com/flowsyncsystem/30min"
+        class="cal-frame"
+        frameborder="0">
+    </iframe>
+</section>
+
+<!-- ✅ FAQ -->
+<section class="section faq">
+    <h2>FAQ</h2>
+    <div class="card">Q: How fast is setup?<br>A: Most accounts go live in under 48 hours.</div>
+    <div class="card">Q: Does it work if I’m busy?<br>A: Yes — FlowSync replies instantly for you.</div>
+</section>
+
+<footer>© 2025 FlowSync. All rights reserved.</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
