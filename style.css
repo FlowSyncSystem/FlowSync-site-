@@ -513,3 +513,9 @@ h1, h2, h3 {
 section h2 {
   margin-top: 60px;   /* adjust this number to increase/decrease spacing */
 }
+/* Space between major sections */
+#how,
+#pricing,
+#book {
+  margin-top: 80px;   /* adjust this number as needed */
+}
