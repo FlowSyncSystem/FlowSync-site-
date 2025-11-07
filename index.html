@@ -184,7 +184,13 @@
   <footer class="footer">
     © 2025 FlowSync. All rights reserved.
   </footer>
+<script>
+  const dotBtn = document.getElementById('nav-toggle');
 
+  dotBtn.addEventListener('click', () => {
+    dotBtn.classList.toggle('is-open');
+  });
+</script>
   <script src="script.js"></script>
 </body>
 </html>
