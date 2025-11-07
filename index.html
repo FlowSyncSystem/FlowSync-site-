@@ -11,25 +11,26 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="site-header">
-    <div class="brand">
-      <div class="brand-mark" aria-hidden="true"></div>
-      <span class="brand-name">FlowSync</span>
-    </div>
+<header class="site-header">
+  <a href="#top" class="brand">
+    <img src="logo.png" alt="FlowSync logo" class="logo" />
+    <span class="brand-name">FlowSync</span>
+  </a>
 
-    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+  <button id="nav-toggle" class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+    <span></span><span></span><span></span>
+  </button>
 
-    <!-- Overlay Menu -->
-    <nav class="overlay" aria-hidden="true">
-      <ul class="overlay-list">
-        <li><a href="#how">How it works</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#book">Book</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Overlay (click to close) -->
+  <div id="nav-overlay" aria-hidden="true"></div>
+
+  <!-- Drawer -->
+  <nav id="nav-drawer" class="nav-drawer" aria-hidden="true">
+    <a class="nav-item" href="#how">How it works</a>
+    <a class="nav-item" href="#pricing">Pricing</a>
+    <a class="nav-item" href="#book">Book</a>
+  </nav>
+</header>
 
   <!-- Eyebrow pill -->
   <div class="eyebrow">No ads. No code. Live in days.</div>
