@@ -623,3 +623,57 @@ section h2 {
   opacity: 1;
   pointer-events: auto;           /* now you can tap it to close */
 }
+/* Overlay covers whole screen and is clickable only when open */
+#nav-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);     /* dim */
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;             /* ignore taps by default */
+  transition: opacity .18s ease;
+  z-index: 40;
+}
+
+/* Drawer card */
+.nav-drawer{
+  position: fixed;
+  right: 16px;
+  top: 84px;                        /* keeps it near the dots */
+  width: min(520px, 92vw);
+  background: #0e1520;
+  border-radius: 18px;
+  padding: 18px 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  opacity: 0;
+  transform: translateY(-8px) scale(.98);
+  pointer-events: none;             /* off until open */
+  transition: opacity .18s ease, transform .18s ease;
+  z-index: 50;
+}
+
+/* Links inside the drawer */
+.nav-item{
+  display:block;
+  padding:14px 16px;
+  border-radius:12px;
+  color:#dfe7f3;
+  text-decoration:none;
+}
+.nav-item + .nav-item{ margin-top:10px; }
+.nav-item:active{ transform: translateY(1px); }
+
+/* When open */
+.nav-open #nav-overlay{
+  opacity: 1;
+  pointer-events: auto;             /* NOW it catches taps */
+}
+.nav-open .nav-drawer{
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* Remove the big gap at the top (hero flush under header) */
+.hero{ margin-top: 0 !important; }
+.site-header{ margin-bottom: 0 !important; }  /* in case header had margin */
