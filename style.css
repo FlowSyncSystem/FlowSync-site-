@@ -318,3 +318,96 @@ h1.hero-title{
   /* was big; make it a touch smaller while still bold */
   font-size: clamp(32px, 7.2vw, 56px);
 }
+/* ensure header and burger are clickable above all */
+.site-header { position: sticky; top: 0; z-index: 1000; }
+.burger {
+  position: relative;
+  z-index: 1001;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.burger span{
+  width: 20px; height: 2px; border-radius: 2px;
+  background: #e7ebf4;
+  display: block;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.burger span:nth-child(1){ transform-origin: left center; }
+.burger span:nth-child(3){ transform-origin: left center; }
+
+/* morph to X when open */
+.menu-open .burger span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+.menu-open .burger span:nth-child(2){ opacity: 0; }
+.menu-open .burger span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+
+/* overlay + drawer */
+#nav-overlay{
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.35);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0; pointer-events: none; transition: opacity .25s ease;
+}
+.menu-open #nav-overlay{ opacity: 1; pointer-events: auto; }
+
+.nav-drawer{
+  position: fixed; right: 14px; top: 76px; z-index: 1001;
+  width: min(520px, calc(100vw - 28px));
+  background: rgba(22,24,29,.92);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  transform: translateY(-8px); opacity: 0; pointer-events: none;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.menu-open .nav-drawer{ transform: translateY(0); opacity: 1; pointer-events: auto; }
+
+.nav-item{
+  display:block; margin:8px; padding:16px 18px;
+  border-radius:14px;
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  color:#e9edf6; text-decoration:none; font-weight:600;
+}
+/* GLOBAL SMALLER TEXT — clean + subtle */
+body {
+  font-size: 15px;   /* was ~16–17px visually */
+}
+
+/* Headings slightly smaller */
+h1 {
+  font-size: 2.05rem;   /* was too large */
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+/* Pricing numbers slightly smaller but still strong */
+.pricing-card h2,
+.pricing-card .price {
+  font-size: 2.3rem;  /* reduce from 2.6–2.8 */
+}
+
+/* Buttons slightly smaller text */
+button,
+.cta-button {
+  font-size: 1rem;
+}
+
+/* Bullet point text */
+.feature-text {
+  font-size: 0.98rem;
+}
