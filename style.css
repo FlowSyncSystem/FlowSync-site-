@@ -257,3 +257,19 @@ h1, h2, h3 {
 .book-link:hover {
   opacity: 0.75;
 }
+/* Softer glow on pricing cards */
+.pricing-card {
+    box-shadow: 0 0 25px rgba(0, 255, 180, 0.18),
+                inset 0 0 25px rgba(0, 255, 180, 0.10);
+    backdrop-filter: blur(18px);
+}
+
+/* Softer gradient on the buttons */
+.price-btn {
+    background: linear-gradient(90deg, #6a5cff, #28c7b7);
+    opacity: 0.90;
+}
+
+.price-btn:hover {
+    opacity: 0.80;
+}
