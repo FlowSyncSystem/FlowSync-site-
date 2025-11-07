@@ -465,3 +465,47 @@ h1, h2, h3 {
   animation-play-state: paused;
   transform: translateY(0) !important;
 }
+/* --- Clean animated 3-dot menu button --- */
+.menu-dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);    /* subtle glass look */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: none;                        /* REMOVE the white border */
+  box-shadow: 0 0 18px rgba(0,0,0,0.25);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #dfe7ff;                 /* soft white dots */
+  margin: 0 3px;
+  display: block;
+  animation: bob 1.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* stagger animation */
+.menu-dots span:nth-child(1) { animation-delay: 0s; }
+.menu-dots span:nth-child(2) { animation-delay: .15s; }
+.menu-dots span:nth-child(3) { animation-delay: .30s; }
+
+/* bobbing animation */
+@keyframes bob {
+  0%, 80%, 100% { transform: translateY(0); }
+  40%          { transform: translateY(-4px); }
+}
+
+/* STOP animation when menu is open */
+.menu-dots.is-open span {
+  animation-play-state: paused;
+  transform: translateY(0) !important;
+}
