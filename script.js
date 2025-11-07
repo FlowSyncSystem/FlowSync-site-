@@ -1,24 +1,22 @@
-// year in footer
-document.getElementById('y').textContent = new Date().getFullYear();
-
-// mobile menu + smooth scroll (kept the same behavior)
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-
-hamburger.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
-  hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+// Mobile menu (overlay, no content bleed-through)
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.getElementById('nav');
+toggle?.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  document.documentElement.style.overflow = open ? 'hidden' : '';
 });
 
-// close menu when clicking a link & smooth scroll
-mobileMenu.querySelectorAll('a').forEach(a => {
+// Smooth scroll for internal links (in addition to CSS)
+document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    e.preventDefault();
     const id = a.getAttribute('href');
-    mobileMenu.classList.remove('open');
-    hamburger.setAttribute('aria-expanded','false');
-    mobileMenu.setAttribute('aria-hidden','true');
-    document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'});
+    if (id.length > 1) {
+      e.preventDefault();
+      document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      nav.classList.remove('open');
+      document.documentElement.style.overflow = '';
+      toggle.setAttribute('aria-expanded', 'false');
+    }
   });
 });
