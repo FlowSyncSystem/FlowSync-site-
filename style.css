@@ -174,3 +174,66 @@ h2{font-size:28px; margin:6px 0 14px}
 
 /* Lock scroll when menu open */
 body.nav-open{overflow:hidden}
+/* --- Pricing glow: a touch darker/less intense (matches your 3rd screenshot) --- */
+.pricing-card {
+  background: radial-gradient(120% 160% at 20% 0%,
+              rgba(70, 110, 100, 0.22) 0%,
+              rgba(34, 44, 64, 0.30) 40%,
+              rgba(20, 24, 36, 0.55) 100%),
+              linear-gradient(180deg, rgba(6,10,16,0.65), rgba(6,10,16,0.65));
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+/* pricing-only smaller text */
+.pricing-card .price-amount { font-size: clamp(34px, 8vw, 46px); }
+.pricing-card .price-unit   { font-size: clamp(14px, 3.2vw, 18px); opacity: .9; }
+.pricing-card h3            { font-size: clamp(18px, 4.5vw, 22px); }
+
+/* keep the nice edge glow but soften it */
+.pricing-card::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 60px 18px rgba(64, 196, 166, 0.18);
+}
+
+/* Badge stays bright but not overpowering */
+.badge-popular {
+  background: #5C4DFF;
+  box-shadow: 0 8px 24px rgba(92,77,255,0.25);
+}
+
+/* bullet row spacing stays the same; just ensure square bullets look crisp */
+.benefit {
+  display: flex; align-items: center; gap: 12px;
+}
+.benefit .dot {
+  width: 14px; height: 14px; border-radius: 6px; /* more square-ish */
+  background: #24D07A;
+  animation: breathe 2.8s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%   { transform: scale(1);   box-shadow: 0 0 0 0 rgba(36,208,122,0.35); }
+  50%  { transform: scale(1.08); box-shadow: 0 0 16px 6px rgba(36,208,122,0.20); }
+  100% { transform: scale(1);   box-shadow: 0 0 0 0 rgba(36,208,122,0.35); }
+}
+
+/* Calendly + FAQ */
+.calendly-inline-widget { background: #0b0f16; border: 1px solid rgba(255,255,255,0.06); }
+.faq h2 { margin-bottom: 14px; }
+.faq-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 10px 0;
+}
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+}
+.faq-item[open] { background: rgba(255,255,255,0.06); }
+.faq-item p { margin: 10px 0 0; color: rgba(255,255,255,0.8); }
