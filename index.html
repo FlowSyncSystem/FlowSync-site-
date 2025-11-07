@@ -1,105 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlowSync</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FlowSync — Booked Customers On Autopilot</title>
+  <meta name="description" content="Instant reply, auto-booking, and no-show reduction — so every enquiry becomes an appointment." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="2.png" />
 </head>
 <body>
+  <!-- ======= HEADER ======= -->
+  <header class="nav">
+    <a href="#top" class="brand">
+      <img src="2.png" class="brand-logo" alt="FlowSync logo" />
+      <span class="brand-name">FlowSync</span>
+    </a>
 
-  <header>
-    <div class="logo-area">
-      <img src="logo.png" class="logo" />
-      <span class="logotext">FlowSync</span>
-    </div>
-
-    <button id="menuBtn" class="menu-btn">
-      <div></div><div></div><div></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+      <span></span><span></span><span></span>
     </button>
-
-    <nav id="mobileMenu" class="mobile-menu">
-      <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#book">Book</a>
-    </nav>
   </header>
 
-  <section class="hero">
-    <p class="pill">No ads. No code. Live in days.</p>
-
-    <h1>
-      Turn missed<br />
-      messages into<br />
-      <span class="gradient">booked customers.</span>
-    </h1>
-
-    <p class="subtext">
-      Instant reply, auto-booking, and no-show reduction — so every enquiry becomes an appointment.
-    </p>
-
-    <div class="btn-row">
-      <a class="cta moving" href="#book">Book a free setup</a>
-      <a class="cta-dark" href="#pricing">See pricing</a>
+  <!-- Mobile Nav (overlays content, no bleed-through) -->
+  <nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav__inner">
+      <a href="#how" class="mobile-link">How it works</a>
+      <a href="#pricing" class="mobile-link">Pricing</a>
+      <a href="#book" class="mobile-link">Book</a>
     </div>
+  </nav>
 
-    <ul class="features">
-      <li><span class="green"></span>Instant reply on Instagram, WhatsApp & SMS.</li>
-      <li><span class="green"></span>Auto-booking straight into your calendar.</li>
-      <li><span class="green"></span>No-shows cut by smart reminders.</li>
-    </ul>
+  <main id="top">
+    <!-- ======= HERO ======= -->
+    <section class="hero">
+      <div class="hero-badge">No ads. No code. Live in days.</div>
 
-    <div class="socials">
-      <a href="https://instagram.com/flowsyncsystem" target="_blank" class="social-icon no-underline">
-        <img src="instagram.svg" />
-      </a>
-      <a href="https://tiktok.com/@flowsyncsystem" target="_blank" class="social-icon no-underline">
-        <img src="tiktok.svg" />
-      </a>
-    </div>
-  </section>
+      <h1 class="hero-title">
+        Turn missed messages into
+        <span class="gradient-text">booked customers.</span>
+      </h1>
 
-  <section id="pricing" class="pricing">
+      <p class="hero-sub">
+        Instant reply, auto-booking, and no-show reduction — so every enquiry becomes an appointment.
+      </p>
 
-    <div class="price-card top-card">
-      <div class="popular-badge">Most popular</div>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn--brand glow">Book a free setup</a>
+        <a href="#pricing" class="btn btn--panel">See pricing</a>
+      </div>
 
-      <h2 class="card-title">Monthly</h2>
-      <p class="price">£269.99 <span>/month</span></p>
-
-      <ul>
-        <li>Instant reply & auto-booking</li>
-        <li>WhatsApp / SMS / DMs</li>
-        <li>No-show reduction</li>
-        <li>Support included</li>
+      <ul class="points">
+        <li><span class="tick"></span>Instant reply on Instagram, WhatsApp &amp; SMS.</li>
+        <li><span class="tick"></span>Auto-booking straight into your calendar.</li>
+        <li><span class="tick"></span>No-shows cut by smart reminders.</li>
       </ul>
 
-      <a class="subscribe-btn">Subscribe Monthly</a>
+      <div class="socials">
+        <a class="social" href="https://www.instagram.com/flowsyncsystem" target="_blank" rel="noopener">
+          <!-- Instagram SVG -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.75A5.25 5.25 0 1 1 6.75 13 5.26 5.26 0 0 1 12 7.75zm0 2A3.25 3.25 0 1 0 15.25 13 3.25 3.25 0 0 0 12 9.75zm5.4-2.9a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1z"/></svg>
+        </a>
+
+        <a class="social" href="https://www.tiktok.com/@flowsyncsystem" target="_blank" rel="noopener">
+          <!-- Correct full TikTok SVG (monotone) -->
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M28 6c1.1 4.9 4.7 8.7 9.6 9.8v6.2c-3.7-.1-7.2-1.4-10-3.6v12.3c0 6.8-5.5 12.3-12.3 12.3S3 37.5 3 30.7c0-6.2 4.5-11.4 10.5-12.2v6.5c-2.3.8-4 3-4 5.7 0 3.3 2.6 6 5.9 6 3.3 0 6-2.7 6-6V6h6z" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ======= HOW IT WORKS ======= -->
+    <section id="how" class="section">
+      <h2>How it works</h2>
+      <div class="cards">
+        <div class="card"><h3>1) Connect your inboxes</h3><p>We connect Instagram DMs, WhatsApp and SMS.</p></div>
+        <div class="card"><h3>2) Auto-reply &amp; qualify</h3><p>Leads get instant answers and pre-qualification.</p></div>
+        <div class="card"><h3>3) Auto-book into your calendar</h3><p>FlowSync sends your booking link and confirms.</p></div>
+        <div class="card"><h3>4) Reduce no-shows</h3><p>Smart confirmations &amp; reminders keep revenue on the calendar.</p></div>
+      </div>
+    </section>
+
+    <!-- ======= PRICING ======= -->
+    <section id="pricing" class="section">
+      <h2>Pricing</h2>
+      <p class="muted">Simple. No setup fee. Cancel anytime.</p>
+
+      <div class="price-card">
+        <div class="pc-top">
+          <span class="pill">Most popular</span>
+          <h3>Monthly</h3>
+          <div class="price">£269.99 <span>/month</span></div>
+        </div>
+
+        <ul class="pc-list">
+          <li>Instant reply &amp; auto-booking</li>
+          <li>WhatsApp / SMS / DMs</li>
+          <li>No-show reduction</li>
+          <li>Support included</li>
+        </ul>
+
+        <a class="btn btn--brand wide" href="#book">Subscribe Monthly</a>
+      </div>
+
+      <div class="price-card">
+        <div class="pc-top">
+          <h3>One-time</h3>
+          <div class="price">£400</div>
+        </div>
+        <ul class="pc-list">
+          <li>Pay once, get a year of FlowSync</li>
+          <li>Same features as monthly</li>
+        </ul>
+        <a class="btn btn--panel wide" href="#book">Pay £400 one-time</a>
+      </div>
+    </section>
+
+    <!-- ======= BOOK ======= -->
+    <section id="book" class="section">
+      <h2>Book your free setup call</h2>
+      <p class="muted">Pick a time — we’ll connect FlowSync, import your message templates and go live.</p>
+
+      <div class="book-actions">
+        <a class="btn btn--panel" target="_blank" rel="noopener" href="https://calendly.com/flowsyncsystem/30min">Open Calendly</a>
+        <a class="btn btn--brand" href="tel:07939899074">Call 07939899074</a>
+      </div>
+
+      <!-- Calendly embed -->
+      <div class="calendly-embed">
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/flowsyncsystem/30min"
+             style="min-width:320px;height:740px"></div>
+      </div>
+      <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </section>
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="2.png" class="brand-logo" alt="FlowSync logo" />
+        <span>FlowSync</span>
+      </div>
+      <nav class="footer-links">
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#book">Book</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/flowsyncsystem" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.75A5.25 5.25 0 1 1 6.75 13 5.26 5.26 0 0 1 12 7.75zm0 2A3.25 3.25 0 1 0 15.25 13 3.25 3.25 0 0 0 12 9.75zm5.4-2.9a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@flowsyncsystem" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 48 48"><path d="M28 6c1.1 4.9 4.7 8.7 9.6 9.8v6.2c-3.7-.1-7.2-1.4-10-3.6v12.3c0 6.8-5.5 12.3-12.3 12.3S3 37.5 3 30.7c0-6.2 4.5-11.4 10.5-12.2v6.5c-2.3.8-4 3-4 5.7 0 3.3 2.6 6 5.9 6 3.3 0 6-2.7 6-6V6h6z"/></svg>
+        </a>
+      </div>
     </div>
+    <p class="copy">© <span id="y"></span> FlowSync. All rights reserved.</p>
+  </footer>
 
-    <div class="price-card">
-      <h2 class="card-title">One-time</h2>
-      <p class="price">£400</p>
-
-      <ul>
-        <li>Pay once, get a year of FlowSync</li>
-        <li>Same features as monthly</li>
-      </ul>
-    </div>
-
-  </section>
-
-  <section id="book" class="book">
-    <h2>Book your free setup call</h2>
-    <p>Pick a time — we’ll connect FlowSync, import your message templates and go live.</p>
-
-    <iframe
-      src="https://calendly.com/flowsyncsystem/30min"
-      class="cal-frame"
-      frameborder="0">
-    </iframe>
-  </section>
-
-<script src="main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
