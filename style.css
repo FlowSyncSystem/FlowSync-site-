@@ -386,3 +386,45 @@ h1, h2, h3 {
 .social svg path {
   fill: currentColor !important;
 }
+/* --- Book Now (Calendly) --- */
+.book-cta{
+  margin: 10px 0 18px;
+  text-align: left;          /* matches your layout; change to center if you want */
+}
+.book-btn{
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:14px;
+  color:#fff;
+  text-decoration:none;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.book-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+  background:rgba(255,255,255,0.06);
+}
+
+/* make the link NEVER purple/visited */
+.book-cta a, .book-cta a:visited, .book-cta a:active { color:#fff; }
+
+/* --- Smooth animated gradient (buttons) --- */
+@keyframes moveGrad {
+  0%   { background-position: 0% 50%; }
+  100% { background-position:100% 50%; }
+}
+/* your gradient buttons already use .btn-gradient (and .btn-gradient.wide) */
+.btn-gradient, .btn-gradient.wide{
+  background-image: linear-gradient(90deg,#7b5eff,#28c7b7);
+  background-size: 200% 200%;
+  animation: moveGrad 6s ease-in-out infinite alternate;
+}
+/* keep the big CTA smooth but not overly glowy */
+.btn-gradient:hover,
+.btn-gradient.wide:hover{
+  box-shadow: 0 10px 30px rgba(64,140,255,.22);
+}
