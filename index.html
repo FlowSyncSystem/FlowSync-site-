@@ -256,12 +256,13 @@
       // close the menu
       closeNav && closeNav();
     });
-  });
+});
+</script>   <!-- ADD THIS -->
 
-  const overlay = document.getElementById('nav-overlay');
-  const drawer  = document.getElementById('nav-drawer');
-  const toggle  = document.getElementById('nav-toggle'); // your three-dots button
-
+<script>   <!-- Your new script begins here -->
+const overlay = document.getElementById('nav-overlay');
+const drawer  = document.getElementById('nav-drawer');
+const toggle  = document.getElementById('nav-toggle');
   function openNav(){
     document.body.classList.add('nav-open');
     overlay.setAttribute('aria-hidden','false');
