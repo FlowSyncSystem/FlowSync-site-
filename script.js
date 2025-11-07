@@ -1,29 +1,25 @@
-// Mobile menu
-const burger = document.getElementById('hamburger');
-const links  = document.getElementById('nav-links');
+// Mobile menu toggle
+const hamburger = document.getElementById('hamburger');
+const html = document.documentElement;
+hamburger?.addEventListener('click', () => {
+  html.classList.toggle('menu-open');
+});
 
-if (burger && links){
-  burger.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+// Close menu on nav click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => html.classList.remove('menu-open'));
+});
 
-  // Close when clicking a link (and smooth scroll)
-  links.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', () => links.classList.remove('open'));
-  });
-}
-
-// Smooth scroll for all internal links
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', e=>{
+// Smooth anchor scroll with small offset for sticky nav
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
     const id = a.getAttribute('href');
-    const target = document.querySelector(id);
-    if(target){
-      e.preventDefault();
-      target.scrollIntoView({behavior:'smooth', block:'start'});
-      history.pushState(null, '', id);
-    }
+    if (!id || id === '#') return;
+    const el = document.querySelector(id);
+    if (!el) return;
+    e.preventDefault();
+    const y = el.getBoundingClientRect().top + window.pageYOffset - 70;
+    window.scrollTo({ top: y, behavior: 'smooth' });
   });
 });
 
