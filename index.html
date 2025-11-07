@@ -1,173 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FlowSync — Booked Customers On Autopilot</title>
-  <meta name="description" content="Instant reply, auto-booking, and no-show reduction — so every enquiry becomes an appointment." />
-
-  <!-- Inter font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome (brand icons) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-  <link rel="icon" href="2.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowSync</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ===== NAV / TOP ===== -->
-<header class="nav">
-  <a href="#top" class="brand">
-    <img src="2.png" alt="FlowSync" class="brand-logo">
-    <span class="brand-name">FlowSync</span>
-  </a>
-
-  <button class="hamburger" id="hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-
-<!-- Mobile overlay menu -->
-<div class="mobile-nav" id="mobileNav" aria-hidden="true">
-  <nav class="mobile-nav__inner">
-    <a href="#how" class="m-link">How it works</a>
-    <a href="#pricing" class="m-link">Pricing</a>
-    <a href="#book" class="m-link">Book</a>
-  </nav>
-</div>
-
-<!-- ===== HERO ===== -->
-<main id="top">
-  <section class="hero">
-    <div class="hero-badge">No ads. No code. Live in days.</div>
-
-    <h1 class="hero-title">
-      <span>Turn missed</span><br>
-      <span>messages into</span><br>
-      <span class="gradient-text">booked customers.</span>
-    </h1>
-
-    <p class="hero-sub">
-      Instant reply, auto-booking, and no-show reduction — so every enquiry becomes an appointment.
-    </p>
-
-    <div class="hero-cta">
-      <a href="#book" class="btn btn--primary">Book a free setup</a>
-      <a href="#pricing" class="btn btn--secondary">See pricing</a>
+  <header>
+    <div class="logo-area">
+      <img src="logo.png" class="logo" />
+      <span class="logotext">FlowSync</span>
     </div>
 
-    <ul class="hero-points">
-      <li><span class="check"></span>Instant reply on Instagram, WhatsApp &amp; SMS.</li>
-      <li><span class="check"></span>Auto-booking straight into your calendar.</li>
-      <li><span class="check"></span>No-shows cut by smart reminders.</li>
-    </ul>
+    <button id="menuBtn" class="menu-btn">
+      <div></div><div></div><div></div>
+    </button>
 
-    <div class="socials">
-      <a href="https://www.instagram.com/flowsyncsystem" target="_blank" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-      <a href="https://www.tiktok.com/@flowsyncsystem" target="_blank" aria-label="TikTok">
-        <i class="fa-brands fa-tiktok"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section class="section" id="how">
-    <h2>How it works</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>1) Connect your inboxes</h3>
-        <p>We connect Instagram DMs, WhatsApp and SMS.</p>
-      </div>
-      <div class="card">
-        <h3>2) Auto-reply &amp; qualify</h3>
-        <p>Leads get instant answers and pre-qualification.</p>
-      </div>
-      <div class="card">
-        <h3>3) Auto-book into your calendar</h3>
-        <p>FlowSync sends your booking link and confirms.</p>
-      </div>
-      <div class="card">
-        <h3>4) Reduce no-shows</h3>
-        <p>Smart confirmations &amp; reminders keep revenue on the calendar.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PRICING ===== -->
-  <section class="section" id="pricing">
-    <h2>Pricing</h2>
-    <p class="muted">Simple. No setup fee. Cancel anytime.</p>
-
-    <div class="pricing">
-      <!-- Monthly card (styled like your preferred screenshot) -->
-      <article class="price-card is-popular">
-        <div class="pc-top">
-          <span class="pill">Most popular</span>
-          <h3>Monthly</h3>
-          <div class="price">£269.99 <span>/month</span></div>
-        </div>
-        <ul class="pc-list">
-          <li>Instant reply &amp; auto-booking</li>
-          <li>WhatsApp / SMS / DMs</li>
-          <li>No-show reduction</li>
-          <li>Support included</li>
-        </ul>
-        <a class="btn btn--primary btn--block" href="#book">Subscribe Monthly</a>
-      </article>
-
-      <article class="price-card">
-        <h3>One-time</h3>
-        <div class="price">£400</div>
-        <ul class="pc-list">
-          <li>Pay once, get a year of FlowSync</li>
-          <li>Same features as monthly</li>
-        </ul>
-        <a class="btn btn--secondary btn--block" href="#book">Pay £400 one-time</a>
-      </article>
-    </div>
-  </section>
-
-  <!-- ===== BOOK ===== -->
-  <section class="section" id="book">
-    <h2>Book your free setup call</h2>
-    <p class="muted">Pick a time — we’ll connect FlowSync, import your message templates and go live.</p>
-
-    <div class="book-actions">
-      <a class="btn btn--ghost" target="_blank" href="https://calendly.com/flowsyncsystem/30min">Open Calendly</a>
-      <a class="btn btn--primary" href="tel:07939899074">Call 07939899074</a>
-    </div>
-
-    <!-- Embedded Calendly -->
-    <div class="calendly-embed">
-      <div class="calendly-inline-widget"
-           data-url="https://calendly.com/flowsyncsystem/30min"
-           style="min-width:320px;height:740px;"></div>
-      <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="2.png" class="brand-logo" alt="FlowSync" />
-      <span>FlowSync</span>
-    </div>
-    <nav class="footer-links">
+    <nav id="mobileMenu" class="mobile-menu">
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#book">Book</a>
     </nav>
-  </div>
-  <p class="copy">© <span id="y"></span> FlowSync. All rights reserved.</p>
-</footer>
+  </header>
 
-<script src="script.js"></script>
+  <section class="hero">
+    <p class="pill">No ads. No code. Live in days.</p>
+
+    <h1>
+      Turn missed<br />
+      messages into<br />
+      <span class="gradient">booked customers.</span>
+    </h1>
+
+    <p class="subtext">
+      Instant reply, auto-booking, and no-show reduction — so every enquiry becomes an appointment.
+    </p>
+
+    <div class="btn-row">
+      <a class="cta moving" href="#book">Book a free setup</a>
+      <a class="cta-dark" href="#pricing">See pricing</a>
+    </div>
+
+    <ul class="features">
+      <li><span class="green"></span>Instant reply on Instagram, WhatsApp & SMS.</li>
+      <li><span class="green"></span>Auto-booking straight into your calendar.</li>
+      <li><span class="green"></span>No-shows cut by smart reminders.</li>
+    </ul>
+
+    <div class="socials">
+      <a href="https://instagram.com/flowsyncsystem" target="_blank" class="social-icon no-underline">
+        <img src="instagram.svg" />
+      </a>
+      <a href="https://tiktok.com/@flowsyncsystem" target="_blank" class="social-icon no-underline">
+        <img src="tiktok.svg" />
+      </a>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+
+    <div class="price-card top-card">
+      <div class="popular-badge">Most popular</div>
+
+      <h2 class="card-title">Monthly</h2>
+      <p class="price">£269.99 <span>/month</span></p>
+
+      <ul>
+        <li>Instant reply & auto-booking</li>
+        <li>WhatsApp / SMS / DMs</li>
+        <li>No-show reduction</li>
+        <li>Support included</li>
+      </ul>
+
+      <a class="subscribe-btn">Subscribe Monthly</a>
+    </div>
+
+    <div class="price-card">
+      <h2 class="card-title">One-time</h2>
+      <p class="price">£400</p>
+
+      <ul>
+        <li>Pay once, get a year of FlowSync</li>
+        <li>Same features as monthly</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section id="book" class="book">
+    <h2>Book your free setup call</h2>
+    <p>Pick a time — we’ll connect FlowSync, import your message templates and go live.</p>
+
+    <iframe
+      src="https://calendly.com/flowsyncsystem/30min"
+      class="cal-frame"
+      frameborder="0">
+    </iframe>
+  </section>
+
+<script src="main.js"></script>
 </body>
 </html>
