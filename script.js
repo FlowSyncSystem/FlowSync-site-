@@ -1,113 +1,33 @@
-// Year in footer
-document.getElementById('y').textContent = new Date().getFullYear();
-
-// Hamburger + overlay with backdrop close & Esc
-const ham = document.querySelector('.hamburger');
-const overlay = document.querySelector('.overlay');
-
-function setMenu(open){
-  ham.setAttribute('aria-expanded', open ? 'true' : 'false');
-  overlay.classList.toggle('open', open);
-  overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
-  document.body.classList.toggle('menu-open', open);
-}
-
-ham.addEventListener('click', () => {
-  const open = overlay.classList.contains('open') === false;
-  setMenu(open);
-});
-
-// Close when clicking outside menu items (on the blurred backdrop)
-overlay.addEventListener('click', (e) => {
-  if (e.target === overlay) setMenu(false);
-});
-
-// Close on Esc
-document.addEventListener('keydown', (e)=>{
-  if (e.key === 'Escape') setMenu(false);
-});
-
-// Smooth scroll for in-page nav
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    const id = a.getAttribute('href').slice(1);
-    const el = document.getElementById(id);
-    if (el){
-      e.preventDefault();
-      setMenu(false);
-      el.scrollIntoView({behavior:'smooth', block:'start'});
-    }
-  });
-});
 <script>
   (function () {
-    const body = document.body;
-    const btn  = document.getElementById('nav-toggle');
-    const drawer = document.getElementById('nav-drawer');
-    const overlay = document.getElementById('nav-overlay');
+    const btn = document.getElementById("nav-toggle");
+    const drawer = document.getElementById("nav-drawer");
+    const overlay = document.getElementById("nav-overlay");
 
-    function openMenu(){
-      body.classList.add('menu-open');
-      btn.setAttribute('aria-expanded','true');
-      drawer.setAttribute('aria-hidden','false');
-      overlay.setAttribute('aria-hidden','false');
-      // lock scroll
-      body.style.overflow = 'hidden';
-    }
-    function closeMenu(){
-      body.classList.remove('menu-open');
-      btn.setAttribute('aria-expanded','false');
-      drawer.setAttribute('aria-hidden','true');
-      overlay.setAttribute('aria-hidden','true');
-      body.style.overflow = '';
+    function openNav() {
+      btn.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+      drawer.classList.add("show");
+      overlay.classList.add("show");
+      document.body.classList.add("nav-open");
     }
 
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      if (body.classList.contains('menu-open')) closeMenu(); else openMenu();
-    });
+    function closeNav() {
+      btn.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      drawer.classList.remove("show");
+      overlay.classList.remove("show");
+      document.body.classList.remove("nav-open");
+    }
 
-    overlay.addEventListener('click', closeMenu);
-    drawer.addEventListener('click', e => {
-      if (e.target.matches('.nav-item')) closeMenu();
-    });
+    function toggleNav() {
+      drawer.classList.contains("show") ? closeNav() : openNav();
+    }
 
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeMenu();
+    btn.addEventListener("click", toggleNav);
+    overlay.addEventListener("click", closeNav);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeNav();
     });
   })();
-</script>
-<script>
-(() => {
-  const body = document.body;
-  const toggle = document.getElementById('nav-toggle');
-  const drawer = document.getElementById('nav-drawer');
-  const overlay = document.getElementById('nav-overlay');
-
-  const open = () => {
-    body.classList.add('menu-open');
-    toggle.setAttribute('aria-expanded','true');
-    drawer.setAttribute('aria-hidden','false');
-    overlay.setAttribute('aria-hidden','false');
-    body.style.overflow = 'hidden';
-  };
-  const close = () => {
-    body.classList.remove('menu-open');
-    toggle.setAttribute('aria-expanded','false');
-    drawer.setAttribute('aria-hidden','true');
-    overlay.setAttribute('aria-hidden','true');
-    body.style.overflow = '';
-  };
-
-  toggle.addEventListener('click', e => {
-    e.stopPropagation();
-    body.classList.contains('menu-open') ? close() : open();
-  });
-
-  overlay.addEventListener('click', close);
-  drawer.addEventListener('click', e => {
-    if (e.target.closest('.nav-item')) close();
-  });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-})();
 </script>
