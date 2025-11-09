@@ -10,21 +10,24 @@
 <body>
 
   <!-- Header -->
-  <header class="site-header">
-    <a href="#top" class="brand">
-      <img src="logo.png" alt="FlowSync logo" class="brand-logo" />
-      <span class="brand-name">FlowSync</span>
-    </a>
+<header class="site-header">
+  <a href="#top" class="brand">
+    <img src="logo.png" alt="FlowSync logo" class="brand-logo" />
+    <span class="brand-name">FlowSync</span>
+  </a>
 
-<!-- Click-to-close overlay -->
+  <!-- Menu button (three dots) -->
+  <button id="nav-toggle" class="menu-dots" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Overlay + Drawer (ONE copy only) -->
 <div id="nav-overlay" aria-hidden="true"></div>
-
-<!-- Drawer -->
-<nav id="nav-drawer" class="nav-drawer" aria-expanded="false">
+<nav id="nav-drawer" class="nav-drawer" aria-hidden="true">
   <a class="nav-item" href="#how">How it works</a>
   <a class="nav-item" href="#pricing">Pricing</a>
   <a class="nav-item" href="#book">Book</a>
-  <a class="nav-item" href="#top">Back to top</a>
 </nav>
 
     <!-- Burger -->
