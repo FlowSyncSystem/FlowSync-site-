@@ -820,3 +820,29 @@ section h2 {
 #nav-drawer {
   padding: 18px !important;
 }
+/* Smaller drawer container */
+#nav-drawer {
+  max-width: 320px;
+  padding: 12px !important;
+  border-radius: 14px;
+}
+
+/* Reduce space between items */
+.nav-item {
+  padding: 10px 12px !important;
+  font-size: 15px;
+}
+
+.nav-item + .nav-item {
+  margin-top: 8px;
+}
+
+/* Reduce overall drawer height */
+#nav-overlay {
+  padding-top: 40px;
+}
+
+/* Slightly tighten the drawer background */
+.nav-drawer {
+  background: rgba(20, 20, 30, 0.9);
+}
